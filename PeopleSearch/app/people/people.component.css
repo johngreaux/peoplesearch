@@ -1,0 +1,32 @@
+﻿.person-container {
+    max-height:600px;
+    overflow-y:auto;
+}
+
+.person-row {
+    border-bottom: 1px solid #aaa;
+    padding: 10px 0px 10px 0px;
+}
+
+.person-row:nth-of-type(1) {
+    border-top: 1px solid #aaa;
+}
+
+.person-row:nth-child(odd) {
+    background-color: #efefef;
+}
+
+.avatar {
+    width:100px;
+    height: 100px;
+}
+
+.image-circular {
+    border-radius:50%;
+}
+
+.pagination-custom {
+    margin:20px 0px 20px 0px;
+    font-size: 24px;
+}
+

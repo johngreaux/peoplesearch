@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>People Search</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="node_modules/angular2-busy/build/style/busy.css">
+
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <!-- SystemJS config -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app/main').catch(function (err) {
+            console.error(err);
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="container-fluid">
+                <div class="row no-margin" style="height:75px; background-color:#eee;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                        <div class="row no-margin">
+                            <div class="h2" style="padding-left:15px; padding-top:15px;">
+                                <span class="glyphicon glyphicon-user" style="color:#93cc93;"></span>
+                                <span style="padding-left:15px;">People Search</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+
+        <footer>
+            <div class="container-fluid" style="padding:0px;">
+                <div class="row no-margin" style="height:100px; background-color:#555;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                        <div class="row no-margin" style="padding-top:40px;">
+                            <div class="text-center" style="color:#fff;">John Greaux - 2017</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

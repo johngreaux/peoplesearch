@@ -1,0 +1,55 @@
+﻿<span defaultOverlayTarget></span>
+<div [ngBusy]="busy">
+    <div class="container-fluid">
+        <div class="row no-margin">
+            <div class="col-md-6">
+                <app-search-person (onKeyUp)="search($event)"></app-search-person>
+            </div>
+            <div class="col-md-6 text-right">
+                <button class="btn btn-primary" (click)="addPersonModal()" style="margin:20px 0px 20px 0px;">Add Person</button>
+            </div>
+        </div>
+
+        <div class="person-container">
+            <div class="person-row row no-margin" *ngFor="let person of people | paginate: { itemsPerPage: 10, currentPage: p }">
+                <div class="col-md-1 text-center">
+                    <h1>{{person.personId}}</h1>
+                </div>
+                <div class="col-md-1 text-center">
+                    <img class="avatar image-circular" src="{{ person.avatar }}" />
+                </div>
+                <div class="col-md-10">
+                    <div class="row no-margin">
+                        <div class="col-md-10">
+                            <span class="h3">Name: {{ person.firstName }} {{ person.lastName }}</span>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <span class="h3">Age: {{ person.age }}</span>
+                        </div>
+                    </div>
+                    <div class="row no-margin">
+                        <div class="col-md-12">
+                            <span class="h4">Address: {{ person.address }}</span>
+                        </div>
+                    </div>
+                    <div class="row no-margin">
+                        <div class="col-md-12">
+                            <span class="h5">Interests: {{ person.interests }}</span>
+                        </div>
+                    </div>
+                    <div class="row no-margin">
+                        <div class="col-md-12 text-right">
+                            <button class="btn btn-danger btn-sm" (click)="deletePersonModal(person.personId)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-margin text-center">
+            <div class="col-md-12 pagination-custom">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
